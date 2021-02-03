@@ -1,0 +1,100 @@
+html,
+body {
+  background-color: #050210;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.background-blur {
+  position: fixed;
+  left: calc(15% - 165px);
+  top: calc(50% - 165px);
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: linear-gradient(135deg, #fb5dad, #55fb9f, #b97aff);
+  width: 367px;
+  height: 367px;
+  border-radius: 50%;
+  filter: blur(63px);
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.outer-ring {
+  position: absolute;
+  left: calc(50% - 164px);
+  top: calc(50% - 162px);
+  height: 350px;
+  width: 350px;
+  background-image: linear-gradient(135deg, #fb5dad, #55fb9f, #b97aff);
+  border-radius: 50%;
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+
+.inner-ring {
+  position: absolute;
+  left: calc(50% - 140px);
+  top: calc(50% - 138px);
+  height: 300px;
+  width: 300px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle-pulsate {
+  position: absolute;
+  left: calc(51% - 120px);
+  background-color: #050210;
+  height: 230px;
+  width: 230px;
+  margin-top: 32px;
+  border-radius: 50%;
+  transform: scale(1);
+  animation: pulse-black 1s infinite ease-in-out;
+}
+
+@keyframes pulse-black {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
